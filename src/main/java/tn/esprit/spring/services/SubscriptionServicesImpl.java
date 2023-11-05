@@ -77,4 +77,13 @@ public class SubscriptionServicesImpl implements ISubscriptionServices{
                 + subscriptionRepository.recurringRevenueByTypeSubEquals(TypeSubscription.ANNUAL)/12;
         log.info("Monthly Revenue = " + revenue);
     }
+
+    //public void showMonthlyRecurringRevenue() {
+    //    if (subscriptionRepository != null) {
+            //here
+    //    } else {
+    //        log.error("subscriptionRepository is null. Cannot calculate revenue.");
+    //    }
+    //}
+
 }
