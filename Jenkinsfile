@@ -9,11 +9,10 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Cleaning project') {
             steps {
-                // Étape pour construire votre projet
-                // Exemple : sh 'mvn clean install'
-              echo "zouhour"
+                sh 'mvn clean'
+              echo "clean project"
             }
         }
 
