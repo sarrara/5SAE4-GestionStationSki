@@ -15,6 +15,12 @@ pipeline {
               echo "clean project"
             }
         }
+        stage('Building project') {
+            steps {
+                sh 'mvn build'
+              echo "build project"
+            }
+        }
 
        
 
