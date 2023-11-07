@@ -1,5 +1,4 @@
 FROM openjdk:11
-WORKDIR /app
-ADD target/*.jar app.jar
 EXPOSE 9091
-CMD ["java","-jar","/app/app.jar"]
+COPY ./target/gestion-station-ski-1.0.jar gestion-station-ski-1.0.jar
+ENTRYPOINT ["java","-jar","gestion-station-ski-1.0.jar"]
