@@ -16,6 +16,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/subscription")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class SubscriptionRestController {
 
     private final ISubscriptionServices subscriptionServices;
@@ -24,6 +25,11 @@ public class SubscriptionRestController {
     @PostMapping("/add")
     public Subscription addSubscription(@RequestBody Subscription subscription){
         return  subscriptionServices.addSubscription(subscription);
+    }
+    @Operation(description = "get all subscriptions")
+    @GetMapping("/all")
+    public List<Subscription> getAllSubscriptions() {
+        return subscriptionServices.getAllSubscriptions();
     }
     @Operation(description = "Retrieve Subscription by Id")
     @GetMapping("/get/{id-subscription}")

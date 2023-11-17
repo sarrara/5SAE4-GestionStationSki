@@ -18,6 +18,6 @@ public interface ISubscriptionServices {
 	Set<Subscription> getSubscriptionByType(TypeSubscription type);
 
 	List<Subscription> retrieveSubscriptionsByDates(LocalDate startDate, LocalDate endDate);
-
+	public List<Subscription> getAllSubscriptions();
 	void retrieveSubscriptions();
 }

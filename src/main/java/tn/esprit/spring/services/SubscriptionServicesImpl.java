@@ -11,6 +11,7 @@ import tn.esprit.spring.repositories.ISkierRepository;
 import tn.esprit.spring.repositories.ISubscriptionRepository;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -67,6 +68,11 @@ public class SubscriptionServicesImpl implements ISubscriptionServices{
             log.info(sub.getNumSub().toString() + " | "+ sub.getEndDate().toString()
                     + " | "+ aSkier.getFirstName() + " " + aSkier.getLastName());
         }
+    }
+    public List<Subscription> getAllSubscriptions() {
+        List<Subscription> subscriptions = new ArrayList<>();
+        subscriptionRepository.findAll().forEach(subscriptions::add);
+        return subscriptions;
     }
 
   
