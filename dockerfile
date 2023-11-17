@@ -1,10 +1,4 @@
 FROM openjdk:11
-
-# Set the working directory
-WORKDIR /app
-
-COPY target/*.jar /app.jar
-
+ADD /target/SkiStationProject-2.1.jar app.jar
 EXPOSE 9091
-
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+CMD ["/bin/sh", "-c", "sleep 30 && java -jar app.jar"]
