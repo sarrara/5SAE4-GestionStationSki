@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "0490cedb-c2d4-48da-a760-3110eb712fd6",
+		"name": "devops",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20159505"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"startDate\": \"2023-11-20\",\r\n\t\"endDate\": \"2023-12-14\",\r\n\t\"price\": 200.0,\r\n\t\"typeSub\": \"ANNUAL\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://172.10.0.140:8089/api/subscription/add"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numSub\": 1,\r\n    \"startDate\": \"2023-11-21\",\r\n    \"endDate\": \"2023-12-20\",\r\n    \"price\": 50.0,\r\n    \"typeSub\": \"MONTHLY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://172.10.0.140:8089/api/subscription/update"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://172.10.0.140:8089/api/subscription/get/1"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://172.10.0.140:8089/api/subscription/all/MONTHLY"
+			},
+			"response": []
+		}
+	]
+}
