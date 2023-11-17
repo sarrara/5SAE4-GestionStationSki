@@ -1,4 +1,4 @@
 FROM openjdk:11
+ADD /target/SkiStationProject-2.1.jar app.jar
 EXPOSE 9091
-COPY ./target/gestion-station-ski-1.0.jar gestion-station-ski-1.0.jar
-ENTRYPOINT ["java","-jar","gestion-station-ski-1.0.jar"]
+CMD ["/bin/sh", "-c", "sleep 30 && java -jar app.jar"]
