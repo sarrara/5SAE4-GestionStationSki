@@ -132,7 +132,7 @@
                         </goals>
                         <phase>verify</phase> <!-- Change the phase to 'verify' -->
                     </execution>
-			 <configuration>
+		    <configuration>
                         <!-- Add the following line -->
                         <testFilesDirectory>${project.basedir}/src/test/jmeter</testFilesDirectory>
                         <!-- Other configurations -->
