@@ -77,26 +77,8 @@ pipeline {
             }
         }
         
-        // stage("Build docker image") {
-        //     steps {
-        //         sh "sudo docker build -t  . "
-        //     }
-        // }
+       
     }
-    //     stage("Build Docker image") {
-    //         steps {
-    //             script {
-    //                 dockerImage = docker.build(dockerImageName)
-    //             }
-    //         }
-    //     }
-
-    //     stage("Start app and db") {
-    //         steps {
-    //             sh "docker-compose up -d"
-    //         }
-    //     }
-    // }
     
 
     post {
