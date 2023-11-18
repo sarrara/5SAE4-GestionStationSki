@@ -133,7 +133,7 @@
                         <phase>verify</phase> <!-- Change the phase to 'verify' -->
                     </execution>
 		    <execution>
-        <id>configuration</id>
+     
         <goals>
             <goal>configure</goal>
         </goals>
