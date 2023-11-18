@@ -1,19 +1,37 @@
-version: "3.7"
+version: '3.7'
+
 services:
-  ski-station-api:
-    build: .
-    restart: always
-    ports:
-      - 9090:9090
-    depends_on:
-      - mysqldb
-
-  mysqldb:
-    image: "mysql:latest"
-    restart: always
-    ports:
-      - 3306:3306
-
+  mysql:
+    image: mysql
     environment:
-      MYSQL_DATABASE: skiProject
-      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: stationSki
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
+
+  spring-boot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ski-station:latest
+    ports:
+      - "9090:9090"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/stationSki?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_GENERATE_DDL: "true"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQL5InnoDBDialect
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
