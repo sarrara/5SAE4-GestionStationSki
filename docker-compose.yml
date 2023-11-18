@@ -15,7 +15,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ski-station:latest
+    image: stationskiproject-ski-station-api
     ports:
       - "9090:9090"
     depends_on:
