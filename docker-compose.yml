@@ -26,6 +26,15 @@
             - mysql
           networks:
             - app-network
+        angular-app:
+         image: sarrachaouch/sarrachaouch_front:1.0
+         ports:
+          - "80:80"
+         depends_on:
+          - spring-app
+         networks:
+         - app-network
+
 
 
       volumes:
